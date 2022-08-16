@@ -1,0 +1,16 @@
+body {
+  font-family: 'NanumSquare', 'NanumGothic', 'Aria';
+  min-height: 3000px;
+  background-color: green;
+  letter-spacing: -1px;
+}
+
+.inner {
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

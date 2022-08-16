@@ -1,0 +1,306 @@
+#header {
+    position: fixed;
+    background: #fff;
+    transition: 1s all;
+}
+
+/* #header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #eee;
+} */
+
+#header div.inner {
+    height: 90px;
+    text-align: center;
+}
+
+#header div.inner h1 {
+    position: absolute;
+    top: 25%;
+    left: 6%;
+}
+
+#header div.inner h1 a {
+    font-size: 0;
+    display: block;
+    width: 200px;
+    height: 40px;
+    background: url(https://whale.naver.com/_resource/img/main/logo_whale.svg) no-repeat center;
+    background-size: contain;
+}
+
+
+/* 메인 메뉴 */
+#header div.inner nav.gnb {
+    width: 80%;
+    max-width: 1280px;
+    height: 100%;
+    position: relative;
+    left: 10%;
+}
+
+#header div.inner nav.gnb li {
+    width: 153px;
+}
+
+#header div.inner nav.gnb ul.gnbTouch {
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+
+#header div.inner nav.gnb ul.gnbTouch li {
+    display: inline-block;
+}
+
+#header div.inner nav.gnb ul.gnbTouch li a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#header div.inner nav.gnb ul.gnbTouch li a:hover {
+    color: #05c3a7;
+}
+
+#header div.inner nav.gnb ul.gnbSub {
+    background: white;
+    overflow: hidden;
+    transition: .5s all;
+}
+
+#header div.inner nav.gnb ul.gnbSub ul {
+    display: inline-block;
+    padding: 20px 0;
+    text-align: center;
+    vertical-align: top;
+}
+
+#header div.inner nav.gnb ul.gnbSub ul li {
+    height: 40px;
+    line-height: 40px;
+}
+
+#header div.inner nav.gnb ul.gnbSub ul li a {
+    color: #aaa;
+}
+
+#header div.inner nav.gnb ul.gnbSub ul li a:hover {
+    color: black;
+}
+
+
+/* 모바일 메뉴 */
+#header div.inner nav.gnbMobile {
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s all;
+}
+
+#header div.inner nav.gnbMobile {
+    width: 0;
+}
+
+#header div.inner nav.active div.black {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav {
+    width: 0;
+}
+
+#header div.inner nav.active ul.gnbMobileNav {
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    margin-top: 60px;
+    font-size: 15px;
+}
+
+#header div.inner nav.active ul.gnbMobileNav li ul.gnbsub li {
+    display: none;
+}
+
+#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li {
+    padding: 10px 20px;
+}
+
+
+#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+
+#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:first-child a {
+    color: #05c3a7;
+    border: 1px solid #05c3a7;
+}
+
+#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:last-child a {
+    color: #aaa;
+    border: 1px solid #aaa;
+}
+
+
+/* 햄버거 버튼 */
+#header div.inner div.hamburger {
+    display: none;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+#header div.inner div.hamburger::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    transition: 0.5s all;
+}
+
+#header div.inner div.hamburger span {
+    width: 28px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    opacity: 1;
+    transition: 0.5s all;
+}
+
+#header div.inner div.hamburger::after {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 65%;
+    left: 25%;
+    transition: 0.5s all;
+}
+
+#header div.inner div.active::before {
+    top: 50%;
+    transform: rotate(-135deg);
+}
+
+#header div.inner div.active span {
+    opacity: 0;
+}
+
+#header div.inner div.active::after {
+    top: 50%;
+    transform: rotate(135deg);
+}
+
+
+#header div.inner div.down a {
+    position: absolute;
+    top: 21%;
+    right: 4%;
+    width: 125px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #05c3a7;
+    border-radius: 5px;
+    color: #05c3a7;
+    transition: 0.3s all;
+    box-sizing: border-box;
+}
+
+#header div.inner div.down a:first-child:hover {
+    color: white;
+    background: #05c3a7;
+}
+
+@media screen and (max-width:1600px) {
+    #header div.inner h1 {
+        left: 3%;
+    }
+
+    #header div.inner h1 a {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:1280px) {
+    #header div.inner h1 a {
+        width: 150px;
+    }
+
+    #header div.inner nav.gnb ul.gnbTouch li {
+        width: 13%;
+    }
+
+    #header div.inner nav.gnb ul.gnbTouch li a {
+        font-size: 15px;
+    }
+
+    #header div.inner nav.gnb ul.gnbSub ul {
+        width: 13%;
+    }
+
+    #header div.inner nav.gnb ul.gnbSub ul li {
+        width: 100%;
+    }
+
+    #header div.inner nav.gnb ul.gnbSub ul li a {
+        font-size: 14px;
+    }
+
+    #header div.inner div.down a {
+        top: 28%;
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width:980px) {
+    #header div.inner {
+        height: 60px;
+    }
+
+    #header div.inner h1 {
+        top: 15%;
+    }
+
+    #header div.inner h1 a {
+        width: 140px;
+    }
+
+    #header div.inner nav.gnb {
+        display: none;
+    }
+
+    #header div.inner div.hamburger {
+        display: block;
+    }    
+
+    #header div.inner div.down {
+        display: none;
+    }
+}
