@@ -1,18 +1,25 @@
 /* 헤더 메뉴 */
+let body = document.querySelector('body');
 let header = document.getElementById('header');
 let gnb = document.querySelector('.gnb');
 let gnbSub = document.querySelector('.gnbSub');
 let gnbSubHeight = gnbSub.scrollHeight;
+let scrollDown = document.querySelector('scrollDown');
 
 gnb.addEventListener('mouseover',() => {
     gnbSub.style.height = gnbSubHeight + 'px';
-
-
 });
 
-gnb.addEventListener('mouseleave', () => {
+header.addEventListener('mouseleave', () => {
     gnbSub.style.height = '0px';
 });
+
+body.addEventListener('scroll', () => {
+    if(Math.abs(document.body.clientHeight - window.scrollY) < 10 ) {
+        scrollDown.style.diplay = 'block';
+    }
+});
+
 
 /* 햄버거 메뉴 */
 let hamburger = document.querySelector('.hamburger');

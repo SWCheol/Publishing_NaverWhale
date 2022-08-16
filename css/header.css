@@ -2,6 +2,7 @@
     position: fixed;
     background: #fff;
     transition: 1s all;
+    z-index: 5;
 }
 
 /* #header::after {
@@ -36,11 +37,8 @@
 
 /* 메인 메뉴 */
 #header div.inner nav.gnb {
-    width: 80%;
-    max-width: 1280px;
-    height: 100%;
-    position: relative;
-    left: 10%;
+    width: 100%;
+    position: absolute;
 }
 
 #header div.inner nav.gnb li {
@@ -50,7 +48,6 @@
 #header div.inner nav.gnb ul.gnbTouch {
     height: 90px;
     line-height: 90px;
-    text-align: center;
 }
 
 #header div.inner nav.gnb ul.gnbTouch li {
@@ -70,6 +67,8 @@
     background: white;
     overflow: hidden;
     transition: .5s all;
+    position: relative;
+    z-index: 1;
 }
 
 #header div.inner nav.gnb ul.gnbSub ul {
@@ -94,45 +93,45 @@
 
 
 /* 모바일 메뉴 */
-#header div.inner nav.gnbMobile {
-    width: 0;
-    overflow: hidden;
-    transition: 0.5s all;
-}
-
-#header div.inner nav.gnbMobile {
-    width: 0;
-}
-
 #header div.inner nav.active div.black {
+    position: absolute;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 #header div.inner nav.gnbMobile ul.gnbMobileNav {
-    width: 0;
-}
-
-#header div.inner nav.active ul.gnbMobileNav {
     width: 80vw;
     height: 100vh;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -100vw;
+    padding-top: 62px;
     background: white;
-    margin-top: 60px;
     font-size: 15px;
+    transition: .5s all;
+}
+
+#header div.inner nav.active ul.gnbMobileNav {
+    right: 0vw;
 }
 
 #header div.inner nav.active ul.gnbMobileNav li ul.gnbsub li {
     display: none;
 }
 
+#header div.inner nav.active ul.gnbMobileNav > li:not(:last-child) {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    text-align: left;
+    line-height: 50px;
+}
+
 #header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li {
     padding: 10px 20px;
 }
-
 
 #header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li a {
     display: block;
@@ -140,12 +139,22 @@
     height: 50px;
     font-size: 14px;
     line-height: 50px;
-    box-sizing: border-box;
+    text-align: center;
 }
 
 #header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:first-child a {
     color: #05c3a7;
     border: 1px solid #05c3a7;
+}
+
+#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:last-child a::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/mobileMenu_download.svg) no-repeat;
+    background-size: cover;
+    transform: translate(-10px, 5px);
 }
 
 #header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:last-child a {
@@ -235,6 +244,25 @@
     background: #05c3a7;
 }
 
+#header div.inner div.scrollDown {
+    background: url(../img/downloadScroll_btn.png) no-repeat;
+    background-size: cover;
+    width: 220px;
+    height: 70px;
+    padding-left: 60px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 90px;
+    left: calc(50% - 110px);
+    font-size: 24px;
+    line-height: 70px;
+    display: none;
+}
+
+#header div.inner div.scrollDown a {
+    color: white;
+}
+
 @media screen and (max-width:1600px) {
     #header div.inner h1 {
         left: 3%;
@@ -249,6 +277,12 @@
     #header div.inner h1 a {
         width: 150px;
     }
+
+    #header div.inner nav.gnb {
+        width: 80%;
+        left: 10%;
+    }
+
 
     #header div.inner nav.gnb ul.gnbTouch li {
         width: 13%;
@@ -277,6 +311,14 @@
         font-size: 15px;
         line-height: 40px;
     }
+
+    #header div.inner div.scrollDown {
+        width: 200px;
+        height: 64px;
+        font-size: 20px;
+        line-height: 64px;
+    }
+
 }
 
 @media screen and (max-width:980px) {
@@ -301,6 +343,10 @@
     }    
 
     #header div.inner div.down {
+        display: none;
+    }
+
+    #header div.inner div.scrollDown {
         display: none;
     }
 }

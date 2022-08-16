@@ -1,3 +1,49 @@
 footer {
-  display: none;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #bbb;
+}
+
+footer div.inner {
+  line-height: 47px;
+}
+
+footer div.inner ul.footer {
+  display: inline-block;
+  margin-left: 226px;
+}
+
+footer div.inner ul.footer li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+footer div.inner ul.footer li:not(:last-child)::after {
+  content: "";
+  width: 1px;
+  height: 16px;
+  background: #bbb;
+  position: absolute;
+  transform: translate(20px, 16px);
+}
+
+footer div.inner div.down {
+  display: inline-block;
+  width: 148px;
+  height: 45px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+footer div.inner div.down div.img {
+  background: url(../img/mobileMenu_download.svg) no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
