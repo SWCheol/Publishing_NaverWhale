@@ -7,19 +7,69 @@ section {
   min-height: 700px;
 }
 
+article.contents {
+  padding: 10% 5%;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+article.contents div.textarea {
+  display: inline-block;
+}
+
+article.contents div.textarea p {
+  font-size: 30px;
+  opacity: 0.7;
+}
+
+article.contents div.textarea h3 {
+  font-size: 55px;
+}
+
+article.contents div.textarea h3 span.articleStrong {
+  background: white;
+  color: #00b7bc;
+}
+
+article.contents div.textarea div a {
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+}
+
+article.contents div.textarea div a::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 1px;
+  right: -8px;
+  background: url(../img/icon_view_white.png) no-repeat;
+  background-size: contain;
+}
+
+article.contents div.video {
+  display: inline-block;
+  width: 46%;
+  height: 50%;
+  border-radius: 10px;
+}
+
+/* whale */
 section.whale {
   background: url(../img/main_1.jpg) no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
-section.whale .text {
+section.whale .textarea {
   position: absolute;
   top: 325px;
   left: 75px;
 }
 
-section.whale div.text h2 {
+section.whale div.textarea h2 {
   background: url(../img/surfingmyway_slogan.svg) no-repeat;
   background-size: cover;
   width: 720px;
@@ -27,16 +77,16 @@ section.whale div.text h2 {
   margin-bottom: 40px;
 }
 
-section.whale .text div {
+section.whale .textarea div {
   font-size: 32px;
   margin-bottom: 60px;
 }
 
-section.whale .text img {
+section.whale .textarea img {
   background-position: center center;
 }
 
-section.whale .text span.color {
+section.whale .textarea span.color {
   color: #05c3a7;
 }
 
@@ -46,41 +96,6 @@ section.whale img {
   background-size: cover;
   transform: translateY(50px);
   animation: upDown 3s infinite;
-}
-
-section div.download {
-  background: url(../img/icon_btn_arrow.png) 80% 50% no-repeat;
-  background-color: #05c3a7;
-  width: 250px;
-  height: 77px;
-  border-radius: 55px;
-  font-size: 30px;
-  line-height: 77px;
-  padding-left: 50px;
-  box-sizing: border-box;
-}
-
-section.function {
-  background: url(../img/main_2.jpg) no-repeat;
-  background-size: cover;
-}
-
-section.security {
-  background: url(../img/main_3.jpg) no-repeat;
-  background-size: cover;
-}
-
-section.browser {
-  background: url(../img/main_4.jpg) no-repeat;
-  background-size: cover;
-}
-
-section.whaleDown div.inner {
-}
-
-section.whaleDown div.inner div.img img {
-  width: 460px;
-  height: 85px;
 }
 
 @keyframes upDown {
@@ -95,6 +110,42 @@ section.whaleDown div.inner div.img img {
   }
 }
 
+section div.download {
+  background: url(../img/icon_btn_arrow.png) 80% 50% no-repeat;
+  background-color: #05c3a7;
+  width: 250px;
+  height: 77px;
+  border-radius: 55px;
+  font-size: 30px;
+  line-height: 77px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+
+/* function */
+section.function {
+  background: url(../img/main_2.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* security */
+section.security {
+  background: url(../img/main_3.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* browser */
+section.browser {
+  background: url(../img/main_4.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* whaleDown */
+section.whaleDown div.inner div.img img {
+  width: 460px;
+  height: 85px;
+}
+
 @media screen and (max-width: 768px) {
   section.whaleDown div.inner div.img img {
     width: 250px;
@@ -104,6 +155,10 @@ section.whaleDown div.inner div.img img {
 }
 
 @media screen and (max-width: 980px) {
+  main {
+    padding-top: 60px;
+  }
+
   section.whale {
     min-height: 750px;
   }

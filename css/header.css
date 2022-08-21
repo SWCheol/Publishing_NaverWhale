@@ -32,6 +32,7 @@
     height: 40px;
     background: url(https://whale.naver.com/_resource/img/main/logo_whale.svg) no-repeat center;
     background-size: contain;
+    z-index: 5;
 }
 
 
@@ -64,6 +65,7 @@
 }
 
 #header div.inner nav.gnb ul.gnbSub {
+    height: 0;
     background: white;
     overflow: hidden;
     transition: .5s all;
@@ -102,19 +104,20 @@
 }
 
 #header div.inner nav.gnbMobile ul.gnbMobileNav {
-    width: 80vw;
+    width: 0vw;
     height: 100vh;
     position: absolute;
     top: 0;
-    right: -100vw;
+    right: 0;
     padding-top: 62px;
     background: white;
     font-size: 15px;
     transition: .5s all;
+    overflow: hidden;
 }
 
 #header div.inner nav.active ul.gnbMobileNav {
-    right: 0vw;
+    width: 80vw;
 }
 
 #header div.inner nav.active ul.gnbMobileNav li ul.gnbsub li {
@@ -263,7 +266,7 @@
     color: white;
 }
 
-@media screen and (max-width:1600px) {
+@media screen and (max-width: 1600px) {
     #header div.inner h1 {
         left: 3%;
     }
@@ -273,7 +276,7 @@
     }
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width: 1280px) {
     #header div.inner h1 a {
         width: 150px;
     }
@@ -282,7 +285,6 @@
         width: 80%;
         left: 10%;
     }
-
 
     #header div.inner nav.gnb ul.gnbTouch li {
         width: 13%;
@@ -317,11 +319,12 @@
         height: 64px;
         font-size: 20px;
         line-height: 64px;
+        left: calc(50% - 100px);
     }
 
 }
 
-@media screen and (max-width:980px) {
+@media screen and (max-width: 980px) {
     #header div.inner {
         height: 60px;
     }

@@ -4,7 +4,7 @@ let header = document.getElementById('header');
 let gnb = document.querySelector('.gnb');
 let gnbSub = document.querySelector('.gnbSub');
 let gnbSubHeight = gnbSub.scrollHeight;
-let scrollDown = document.querySelector('scrollDown');
+let scrollDown = document.querySelector('.scrollDown');
 
 gnb.addEventListener('mouseover',() => {
     gnbSub.style.height = gnbSubHeight + 'px';
@@ -14,9 +14,11 @@ header.addEventListener('mouseleave', () => {
     gnbSub.style.height = '0px';
 });
 
-body.addEventListener('scroll', () => {
-    if(Math.abs(document.body.clientHeight - window.scrollY) < 10 ) {
-        scrollDown.style.diplay = 'block';
+window.addEventListener('scroll', () => {
+    if(scrollY > 500) {
+        scrollDown.style.display = 'block';
+    } else {
+        scrollDown.style.display = 'none';
     }
 });
 
