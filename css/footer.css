@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  padding: 50px 0;
+  padding-bottom: 50px;
   text-align: center;
 }
 
@@ -10,11 +10,20 @@ footer a {
 
 footer div.inner {
   line-height: 47px;
+  padding: 0 5%;
+}
+
+footer div.inner div.down a {
+  display: block;
+  width: 135px;
+  height: 18px;
+  margin: 10px auto;
+  background: url(../img/footer_down.svg) no-repeat;
+  background-size: contain;
 }
 
 footer div.inner ul.footer {
   display: inline-block;
-  margin-left: 226px;
 }
 
 footer div.inner ul.footer li {
@@ -31,19 +40,47 @@ footer div.inner ul.footer li:not(:last-child)::after {
   transform: translate(20px, 16px);
 }
 
-footer div.inner div.down {
+footer div.inner div.downBeta {
   display: inline-block;
   width: 148px;
   height: 45px;
   border: 1px solid #bbb;
   border-radius: 5px;
-  margin-left: 30px;
 }
 
-footer div.inner div.down div.img {
+footer div.inner div.downBeta div.img {
   background: url(../img/mobileMenu_download.svg) no-repeat;
   background-size: cover;
   display: inline-block;
   width: 20px;
   height: 20px;
+  position: relative;
+  top: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  footer div.inner ul.footer li a {
+    font-size: 12px;
+  }
+
+  footer div.inner div.downBeta {
+    width: 126px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  footer div.inner div.downBeta a {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 520px) {
+  footer div.inner ul.footer li:not(:last-child)::after {
+    display: none;
+  }
+
+  footer div.inner ul.footer li {
+    margin: 0 10px;
+  }
 }

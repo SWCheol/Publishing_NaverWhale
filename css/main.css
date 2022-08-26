@@ -3,18 +3,23 @@ main {
   padding-top: 90px;
 }
 
-section {
-  min-height: 700px;
-}
-
 article.contents {
-  padding: 10% 5%;
-  box-sizing: border-box;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  min-height: 700px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5%;
   color: #fff;
+  font-weight: bold;
+  line-height: 1.2;
+  position: relative;
 }
 
 article.contents div.textarea {
-  display: inline-block;
+  display: table-cell;
+  width: 52%;
+  vertical-align: top;
 }
 
 article.contents div.textarea p {
@@ -24,20 +29,22 @@ article.contents div.textarea p {
 
 article.contents div.textarea h3 {
   font-size: 55px;
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
 article.contents div.textarea h3 span.articleStrong {
   background: white;
-  color: #00b7bc;
+  padding: 0 10px;
 }
 
-article.contents div.textarea div a {
+article.contents div.textarea div.detail a {
   font-size: 18px;
   color: #fff;
   display: inline-block;
 }
 
-article.contents div.textarea div a::after {
+article.contents div.textarea div.detail a::after {
   content: "";
   display: inline-block;
   width: 15px;
@@ -50,52 +57,67 @@ article.contents div.textarea div a::after {
 }
 
 article.contents div.video {
-  display: inline-block;
-  width: 46%;
-  height: 50%;
+  display: table-cell;
+  width: 47%;
+  position: relative;
+  vertical-align: middle;
+}
+
+article.contents div.video img.img {
+  width: 100%;
   border-radius: 10px;
+}
+
+article.contents div.video img.imgPlus {
+  width: 30%;
+  position: absolute;
+  top: -20%;
+  right: 8%;
 }
 
 /* whale */
 section.whale {
   background: url(../img/main_1.jpg) no-repeat;
   background-size: cover;
-  overflow: hidden;
+  
 }
 
-section.whale .textarea {
-  position: absolute;
-  top: 325px;
-  left: 75px;
+section.whale div.inner {
+  height: 100%;
 }
 
-section.whale div.textarea h2 {
-  background: url(../img/surfingmyway_slogan.svg) no-repeat;
+section.whale div.inner article.contents {
+  height: calc(100vh + 200px);
+}
+
+section.whale .whaleWide {
+  background: url(../img/main_1-1.png) no-repeat;
   background-size: cover;
+  width: 130%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: upDown 3s infinite;
+}
+
+section.whale div.inner article.contents div.textarea h2 {
   width: 720px;
   height: 93px;
   margin-bottom: 40px;
 }
 
-section.whale .textarea div {
+section.whale div.inner article.contents .textarea div {
   font-size: 32px;
   margin-bottom: 60px;
 }
 
-section.whale .textarea img {
+section.whale div.inner article.contents .textarea img.img {
   background-position: center center;
 }
 
-section.whale .textarea span.color {
+section.whale div.inner article.contents .textarea span.color {
   color: #05c3a7;
-}
-
-section.whale img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  transform: translateY(50px);
-  animation: upDown 3s infinite;
 }
 
 @keyframes upDown {
@@ -128,10 +150,18 @@ section.function {
   background-size: cover;
 }
 
+section.function div.inner article.contents div.textarea h3 span.articleStrong {
+  color: #00b7bc;
+}
+
 /* security */
 section.security {
   background: url(../img/main_3.jpg) no-repeat;
   background-size: cover;
+}
+
+section.security div.inner article.contents div.textarea h3 span.articleStrong {
+  color: #058dec;
 }
 
 /* browser */
@@ -140,16 +170,69 @@ section.browser {
   background-size: cover;
 }
 
-/* whaleDown */
-section.whaleDown div.inner div.img img {
-  width: 460px;
-  height: 85px;
+section.browser div.inner article.contents div.textarea h3 span.articleStrong {
+  color: #454ccd;
 }
 
-@media screen and (max-width: 768px) {
-  section.whaleDown div.inner div.img img {
-    width: 250px;
-    height: 46px;
+/* whaleDown */
+section.whaleDown div.inner article.contents {
+  height: calc(60vh - 90px);
+}
+
+section.whaleDown div.inner article.contents div.down {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section.whaleDown div.inner article.contents div.down img {
+  width: 460px;
+  height: 85px;
+  margin-bottom: 30px;
+}
+
+section.whaleDown div.inner article.contents div.down div.download {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1280px) {
+  section.whale div.inner article.contents div.textarea h2 {
+    width: 525px;
+    height: 68px;
+    margin-bottom: 20px;
+  }
+
+  section.whale div.inner div.textarea div:nth-child(2) {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  section.whale div.inner article.contents .textarea div.download {
+    width: 200px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 24px;
+    padding-left: 40px;
+  }
+
+  article.contents div.textarea p {
+    font-size: 22px;
+  }
+  
+  article.contents div.textarea h3 {
+    font-size: 44px;
+  }
+
+  section.whaleDown div.inner article.contents div.down div.download {
+    width: 200px;
+    height: 64px;
+    font-size: 24px;
+    line-height: 64px;
+    padding-left: 40px;
+    background-size: 25px;
   }
 
 }
@@ -160,24 +243,98 @@ section.whaleDown div.inner div.img img {
   }
 
   section.whale {
-    min-height: 750px;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  section.whale div.text h2 {
-    width: 525px;
-    height: 68px;
+    height: 750px;
+    background: url(../img/main_1_m.jpg) no-repeat;
+    background-size: cover;
   }
 
-  section.whale .text div {
+  section.whale div.inner article.contents div.textarea h2 {
+    width: 445px;
+  }
+
+  section.whale div.inner div.textarea div:nth-child(2) {
     font-size: 22px;
   }
 
-  section div.download {
-    width: 200px;
-    height: 64px;
-    line-height: 64px;
-    font-size: 24px;
+  article.contents div.textarea p {
+    font-size: 18px;
+  }
+  
+  article.contents div.textarea h3 {
+    font-size: 32px;
+  }
+
+  article.contents div.textarea div.detail a {
+    font-size: 15px;
+  }
+
+  section.whale .whaleWide {
+    background: url(../img/main_1-1_m.png) no-repeat;
+    background-size: contain;
+    left: 40%;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  section.whaleDown div.inner article.contents div.down img {
+    width: 250px;
+    height: 46px;
+    margin-bottom: 15px;
+  }
+
+  article.contents div.textarea {
+    display: block;
+    width: 100%;
+  }
+
+  article.contents div.video {
+    display: block;
+    width: 80%;
+    margin: 10% 10% 0 10%;
+  }
+
+  article.contents div.video img.imgPlus {
+    width: 20%;
+    top: -15%;
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  section.whale {
+    height: 650px;
+  }
+
+  section.whale div.inner div.textarea h2 {
+    width: 290px;
+    height: 37px;
+    margin-bottom: 20px;
+  }
+
+  section.whale div.inner div.textarea div:nth-child(2) {
+    font-size: 16px;
+  }
+
+  article.contents div.inner div.textarea h3 {
+    font-size: 34px;
+  }
+
+  section.whale div.inner div.download {
+    width: 154px;
+    height: 52px;
+    font-size: 17px;
+    line-height: 52px;
+    padding-left: 35px;
+    background-size: 20px;
+  }
+
+  section.whaleDown div.inner article.contents div.down div.download {
+    width: 154px;
+    height: 52px;
+    font-size: 17px;
+    line-height: 52px;
+    padding-left: 30px;
+    background-size: 20px;
   }
 }

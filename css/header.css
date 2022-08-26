@@ -1,28 +1,22 @@
 #header {
     position: fixed;
+    top: 0;
     background: #fff;
     transition: 1s all;
     z-index: 5;
 }
 
-/* #header::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: #eee;
-} */
-
 #header div.inner {
     height: 90px;
     text-align: center;
+    border-bottom: 1px solid #eee;
 }
 
 #header div.inner h1 {
     position: absolute;
     top: 25%;
     left: 6%;
+    z-index: 5;
 }
 
 #header div.inner h1 a {
@@ -32,7 +26,6 @@
     height: 40px;
     background: url(https://whale.naver.com/_resource/img/main/logo_whale.svg) no-repeat center;
     background-size: contain;
-    z-index: 5;
 }
 
 
@@ -64,13 +57,17 @@
     color: #05c3a7;
 }
 
+#header div.inner nav.gnb div.gnbSubWrap {
+    background: white;
+    width: 100vw;
+    position: relative;
+    z-index: 5;
+}
+
 #header div.inner nav.gnb ul.gnbSub {
     height: 0;
-    background: white;
     overflow: hidden;
     transition: .5s all;
-    position: relative;
-    z-index: 1;
 }
 
 #header div.inner nav.gnb ul.gnbSub ul {
@@ -95,12 +92,21 @@
 
 
 /* 모바일 메뉴 */
-#header div.inner nav.active div.black {
+#header div.inner nav.gnbMobile {
+    display: none;
+}
+
+#header div.inner nav.gnbMobile.active div.black {
     position: absolute;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    z-index: 6;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav > li:first-child {
+    height: 62px;
 }
 
 #header div.inner nav.gnbMobile ul.gnbMobileNav {
@@ -109,34 +115,104 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding-top: 62px;
     background: white;
     font-size: 15px;
     transition: .5s all;
-    overflow: hidden;
+    overflow: auto;
+    z-index: 6;
 }
 
-#header div.inner nav.active ul.gnbMobileNav {
+#header div.inner nav.gnbMobile.active ul.gnbMobileNav {
     width: 80vw;
 }
 
-#header div.inner nav.active ul.gnbMobileNav li ul.gnbsub li {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li.active > a {
+    color: #05c3a7;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li div.plus::before {
+    content: "";
+    width: 16px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: calc(50% - 8px);
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li.active div.plus::before {
+    background: #05c3a7;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li div.plus {
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li div.plus::after {
+    content: "";
+    width: 16px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: calc(50% - 8px);
+    transform: rotate(90deg);
+    transition: 0.5s all;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li.active div.plus::after {
+    background: #05c3a7;
+    transform: rotate(0deg);
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li.active ul.gnbsub {
+    display: block;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.gnbsub {
     display: none;
 }
 
-#header div.inner nav.active ul.gnbMobileNav > li:not(:last-child) {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.gnbsub::before {
+    content: "";
     width: 100%;
-    height: 50px;
+    height: 2px;
+    background: #05c3a7;
+    position: absolute;
+    left: 0;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.gnbsub li {
+    display: block;
+    margin: 0 5% 0 calc(5% - 20px);
+    border-bottom: 1px solid #ccc;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.gnbsub li a {
+    display: block;
+    width: 98%;
+    padding-left: 2%;
+    line-height: 44px;
+}
+
+#header div.inner nav.gnbMobile ul.gnbMobileNav > li:not(:last-child) {
+    width: calc(100% - 20px);
     padding-left: 20px;
     text-align: left;
     line-height: 50px;
+    position: relative;
 }
 
-#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.mobileDown li {
     padding: 10px 20px;
 }
 
-#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li a {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.mobileDown li a {
     display: block;
     width: 100%;
     height: 50px;
@@ -145,12 +221,12 @@
     text-align: center;
 }
 
-#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:first-child a {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.mobileDown li:first-child a {
     color: #05c3a7;
     border: 1px solid #05c3a7;
 }
 
-#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:last-child a::before {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.mobileDown li:last-child a::before {
     content: "";
     display: inline-block;
     width: 20px;
@@ -160,7 +236,7 @@
     transform: translate(-10px, 5px);
 }
 
-#header div.inner nav.active ul.gnbMobileNav li ul.mobileDown li:last-child a {
+#header div.inner nav.gnbMobile ul.gnbMobileNav li ul.mobileDown li:last-child a {
     color: #aaa;
     border: 1px solid #aaa;
 }
@@ -176,6 +252,7 @@
     right: 0;
     transition: 0.5s all;
     cursor: pointer;
+    z-index: 10;
 }
 
 #header div.inner div.hamburger::before {
@@ -211,20 +288,19 @@
     transition: 0.5s all;
 }
 
-#header div.inner div.active::before {
+#header div.inner > div.active::before {
     top: 50%;
     transform: rotate(-135deg);
 }
 
-#header div.inner div.active span {
+#header div.inner > div.active span {
     opacity: 0;
 }
 
-#header div.inner div.active::after {
+#header div.inner > div.active::after {
     top: 50%;
     transform: rotate(135deg);
 }
-
 
 #header div.inner div.down a {
     position: absolute;
@@ -281,9 +357,9 @@
         width: 150px;
     }
 
-    #header div.inner nav.gnb {
+    #header div.inner nav.gnb ul.gnbTouch {
         width: 80%;
-        left: 10%;
+        margin: 0 auto;
     }
 
     #header div.inner nav.gnb ul.gnbTouch li {
@@ -292,6 +368,11 @@
 
     #header div.inner nav.gnb ul.gnbTouch li a {
         font-size: 15px;
+    }
+
+    #header div.inner nav.gnb ul.gnbSub {
+        width: 80%;
+        margin: 0 auto;
     }
 
     #header div.inner nav.gnb ul.gnbSub ul {
@@ -321,7 +402,6 @@
         line-height: 64px;
         left: calc(50% - 100px);
     }
-
 }
 
 @media screen and (max-width: 980px) {
@@ -339,6 +419,10 @@
 
     #header div.inner nav.gnb {
         display: none;
+    }
+
+    #header div.inner nav.gnbMobile {
+        display: block;
     }
 
     #header div.inner div.hamburger {

@@ -36,52 +36,56 @@
                     <li><a href="">웨일 스페이스</a></li>
                     <li><a href="">웨일북</a></li>
                 </ul>
-                <ul class="gnbSub">
-                    <ul>
-                        <li><a href="">Brand Story</a></li>
-                        <li><a href="">주요 기능</a></li>
+                <div class="gnbSubWrap">
+                    <ul class="gnbSub">
+                        <ul>
+                            <li><a href="">Brand Story</a></li>
+                            <li><a href="">주요 기능</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">What's NEW</a></li>
+                            <li><a href="">웨일 이용가이드</a></li>
+                            <li><a href="">마이 액티비티</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">확장앱</a></li>
+                            <li><a href="">배경테마</a></li>
+                            <li><a href="">개발자센터</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">연구소 홈</a></li>
+                            <li><a href="">베스트 연구</a></li>
+                            <li><a href="">버그바운티</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">제품 소개</a></li>
+                            <li><a href="">기능</a></li>
+                            <li><a href="">제휴 서비스</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">웨일북 소개</a></li>
+                            <li><a href="">웨일 OS</a></li>
+                            <li><a href="">디바이스 정보</a></li>
+                        </ul>
                     </ul>
-                    <ul>
-                        <li><a href="">What's NEW</a></li>
-                        <li><a href="">웨일 이용가이드</a></li>
-                        <li><a href="">마이 액티비티</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="">확장앱</a></li>
-                        <li><a href="">배경테마</a></li>
-                        <li><a href="">개발자센터</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="">연구소 홈</a></li>
-                        <li><a href="">베스트 연구</a></li>
-                        <li><a href="">버그바운티</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="">제품 소개</a></li>
-                        <li><a href="">기능</a></li>
-                        <li><a href="">제휴 서비스</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="">웨일북 소개</a></li>
-                        <li><a href="">웨일 OS</a></li>
-                        <li><a href="">디바이스 정보</a></li>
-                    </ul>
-                </ul>
+                </div>
             </nav>
             <nav class="gnbMobile">
                 <div class="black"></div>
+                <div class="empty"></div>
                 <ul class="gnbMobileNav">
+                    <li></li>
                     <li>
-                        <a href="">Surfing My Way</a>
-                        <div></div>
+                        <a class="gnbsubBtn" href="">Surfing My Way</a>
+                        <div class="plus"></div>
                         <ul class="gnbsub">
                             <li><a href="">Brand Story</a></li>
                             <li><a href="">주요 기능</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">이용 가이드</a>
-                        <div></div>
+                        <a class="gnbsubBtn" href="">이용 가이드</a>
+                        <div class="plus"></div>
                         <ul class="gnbsub">
                             <li><a href="">What's NEW</a></li>
                             <li><a href="">웨일 이용가이드</a></li>
@@ -89,8 +93,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">웨일 스토어</a>
-                        <div></div>
+                        <a class="gnbsubBtn" href="">웨일 스토어</a>
+                        <div class="plus"></div>
                         <ul class="gnbsub">
                             <li><a href="">확장앱</a></li>
                             <li><a href="">배경테마</a></li>
@@ -98,8 +102,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">연구소</a>
-                        <div></div>
+                        <a class="gnbsubBtn" href="">연구소</a>
+                        <div class="plus"></div>
                         <ul class="gnbsub">
                             <li><a href="">연구소 홈</a></li>
                             <li><a href="">베스트 연구</a></li>
@@ -107,8 +111,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">웨일 스페이스</a>
-                        <div></div>
+                        <a class="gnbsubBtn" href="">웨일 스페이스</a>
+                        <div class="plus"></div>
                         <ul class="gnbsub">
                             <li><a href="">제품 소개</a></li>
                             <li><a href="">기능</a></li>
@@ -116,8 +120,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">웨일북</a>
-                        <div></div>
+                        <a class="gnbsubBtn" href="">웨일북</a>
+                        <div class="plus"></div>
                         <ul class="gnbsub">
                             <li><a href="">웨일북 소개</a></li>
                             <li><a href="">웨일 OS</a></li>
@@ -148,43 +152,74 @@
     <main id="main">
         <div class="inner">
             <section class="whale">
-                <div class="textarea">
-                    <h2></h2>
-                    <div>나만의 스마트한 브라우저, <span class="color">네이버 웨일</span></div>
-                    <div class="download">다운로드</div>
+                <div class="inner">
+                    <article class="contents">
+                        <div class="textarea">
+                            <h2>
+                                <img src="./img/surfingmyway_slogan.svg" alt="Surfing My Way">
+                            </h2>
+                            <div>나만의 스마트한 브라우저, <span class="color">네이버 웨일</span></div>
+                            <div class="download">다운로드</div>
+                        </div>
+                        <div class="whaleWide"></div>
+                    </article>
                 </div>
-                <img src="./img/main_1-1.png" alt="고래 사진">
             </section>
             <section class="function">
                 <div class="inner">
                     <article class="contents">
                         <div class="textarea">
-                            <p>오늘 해야할 일을<span class="br"></span>더욱 빠르고 가볍게</p>
-                            <h3>필요한 기능은 <span class="br"></span><span class="articleStrong">사이드바</span> 로 바로 쓰고!</h3>
-                            <div><a href="">자세히 보기</a></div>
+                            <p>오늘 해야할 일을 <br>더욱 빠르고 가볍게</p>
+                            <h3>필요한 기능은 <br><span class="articleStrong">사이드바</span>로 바로 쓰고!</h3>
+                            <div class="detail"><a href="">자세히 보기</a></div>
                         </div>
                         <div class="video">
-                            <img src="./img/ww_01_sidebar.gif" alt="">
+                            <img class="img" src="./img/ww_01_1_sidebar.gif" alt="">
+                            <img class="imgPlus" src="./img/ww_01_1_sidebar_plus.png" alt="">
                         </div>
                     </article>
                 </div>
             </section>
             <section class="security">
                 <div class="inner">
+                    <article class="contents">
 
+                        <div class="contentsWrap">
+                            <div class="textarea">
+                                <p>알아서 차단해주는 <br>강력한 보안!</p>
+                                <h3>위조사이트 &<br> 악성 프로그램 차단 <br><span class="articleStrong">세이프 브라우징</span></h3>
+                                <div class="detail"><a href="">자세히 보기</a></div>
+                            </div>
+                            <div class="video">
+                                <img class="img" src="./img/ww_02_safe.gif" alt="">
+                            </div>
+                        </div>
+                
+                    </article>
                 </div>
             </section>
             <section class="browser">
                 <div class="inner">
-
+                    <article class="contents">
+                        <div class="textarea">
+                            <p>내 취향으로 가득한 <br>취향 저격 브라우저</p>
+                            <h3>콘텐츠까지 <br>눈부심없이 선명하게! <br><span class="articleStrong">다크 모드</span></h3>
+                            <div class="detail"><a href="">자세히 보기</a></div>
+                        </div>
+                        <div class="video">
+                            <img class="img" src="./img/ww_03_dark.gif" alt="">
+                        </div>
+                    </article>
                 </div>
             </section>
             <section class="whaleDown">
                 <div class="inner">
-                    <div class="img">
-                        <img src="./img/main_5_text.gif" alt="Surfing My Way">
-                    </div>
-                    <div class="download">다운로드</div>
+                    <article class="contents">
+                        <div class="down">
+                            <img src="./img/main_5_text.gif" alt="Surfing My Way">
+                            <div class="download">다운로드</div>
+                        </div>
+                    </article>
                 </div>
             </section>
         </div>
@@ -193,6 +228,9 @@
     <!-- footer -->
     <footer id="footer">
         <div class="inner">
+            <div class="down">
+                <a href=""></a>
+            </div>
             <ul class="footer">
                 <li><a href="">이용약관</a></li>
                 <li><a href="">개인정보 처리방침</a></li>
@@ -201,7 +239,7 @@
                 <li><a href="">고객센터</a></li>
                 <li><a href="">© NAVER Corp.</a></li>
             </ul>
-            <div class="down">
+            <div class="downBeta">
                 <div class="img"></div>
                 <a href="">베타 다운로드</a>
             </div>
